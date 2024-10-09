@@ -210,3 +210,26 @@ auth:
         custom-params:
           type: keycloak
 ```
+
+### Authentic
+
+```yaml
+auth:
+  type: OAUTH2
+  oauth2:
+    client:
+      authentic:
+        provider: authentic
+        clientId: xxx
+        clientSecret: yyy
+        scope: [ 'openid', 'profile', 'email' ]
+        client-name: authentic
+        issuer-uri: https://<authentic_instance>/application/o/<slug>/
+        user-name-attribute: nickname # OR "name", "given_name", "email", "preferred_username"
+        redirect-uri: http://localhost:8080/login/oauth2/code/oauth2
+        authorization-grant-type: authorization_code
+        custom-params:
+          type: oauth
+          roles-field: groups
+          logoutUrl: https://<authentic_instance>/application/o/<slug>/end-session/
+```
