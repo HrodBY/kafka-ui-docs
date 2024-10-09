@@ -93,17 +93,17 @@ Configure the role mapping to the okta group via generic provider mentioned abov
           value: "<okta-group-name>"
 ```
 
-### Authentic
+### GoAuthentic
 
-You can map Authentic Groups to roles. First, confirm that your Authentic administrator has included the `profile` claim or the groups will not be passed in the auth token.
+You can map GoAuthentic Groups to roles. First, confirm that your GoAuthentic administrator has included the `profile` claim or the groups will not be passed in the auth token.
 
-Ensure `roles-field` in the auth config is set to `groups` and that `profile` is included in the `scope`, as groups are passed by default in the profile scope. See [here](../authentication/oauth2.md###Authentic) for more details.
+Ensure `roles-field` in the auth config is set to `groups` and that `profile` is included in the `scope`, as groups are passed by default in the profile scope. See [here](../authentication/oauth2.md###GoAuthentic) for more details.
 
-Configure the role mapping to the Authentic group via generic provider mentioned above:
+Configure the role mapping to the GoAuthentic group via generic provider mentioned above:
 
 ```yaml
       subjects:
         - provider: oauth
           type: role
-          value: "<authentic-group-name>"
+          value: "<goauthentic-group-name>"
 ```
